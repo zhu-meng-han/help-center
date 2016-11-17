@@ -1,0 +1,12 @@
+{
+  "presets": ["es2015"],
+  "plugins": ["transform-vue-jsx"],
+  "comments": false,
+  "env": {
+    "production": {
+      "plugins": [
+        ["transform-runtime", { "polyfill": false, "regenerator": false }]
+      ]
+    }
+  }
+}

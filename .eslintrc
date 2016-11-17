@@ -1,0 +1,10 @@
+{
+  "plugins": ["vue"],
+  "globals": {
+    "ArrayBuffer": true,
+    "Uint8Array": true,
+    "Promise": true,
+    "UBT": true
+  },
+  "extends": ["elemefe"]
+}
