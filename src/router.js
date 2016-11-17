@@ -1,7 +1,7 @@
 export default [
   {
-    path: '/list',
-    component: require('./components/home/index.vue')
+    path: '/appeal',
+    component: require('./components/appeal/index.vue')
   },
   {
     path: '/help',

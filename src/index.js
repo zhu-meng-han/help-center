@@ -2,7 +2,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueFilter from 'vue-filter';
 
-// import App from './app.vue';
 import routes from './router.js';
 import './index.scss';
 

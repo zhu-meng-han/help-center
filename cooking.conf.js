@@ -22,7 +22,14 @@ cooking.set({
   minimize: true,
   chunk: true, // see https://cookingjs.github.io/zh-cn/configuration.html#chunk
   postcss: [
-    // require('...')
+    require('postcss-import')({
+      addDependencyTo: require('webpack')
+    }),
+    require('postcss-px2rem'),
+    require('postcss-nested'),
+    require('postcss-cssnext')({
+      browsers: ['last 2 versions', 'iOS >= 7', 'Android >= 4.0']
+    })
   ],
   publicPath: '/dist/',
   assetsPath: 'static',
@@ -32,7 +39,7 @@ cooking.set({
     src: path.join(__dirname, 'src'),
     vue: 'vue/dist/vue.js'
   },
-  extends: ['vue2', 'lint', 'sass', 'autoprefixer']
+  extends: ['vue2', 'lint', 'sass']
 });
 
 cooking.add('resolve.root', [
