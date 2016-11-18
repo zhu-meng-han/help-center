@@ -1,16 +1,40 @@
 <template>
-  <header class='header' >
-    <a v-if="data.href" class="goback" :href="data.href"></a>
-    <span v-text="data.title"></span>
+  <header class="eleme-header">
+    <template>
+      <slot name="left">
+        <a class="" href="javascript:;" @click="goBack">
+          <svg><use :xlink:href="Icon.ArrowLeft"></use></svg>
+        </a>
+      </slot>
+      <span v-text="data.title"></span>
+      <slot name="right">
+        <a class="eleme-right" href="javascript"></a>
+      </slot>
+    </template>
   </header>
 </template>
 <script type="text/javascript">
+  import Icon from 'src/common/icon';
   export default {
-    props: ['data']
+    props: ['data'],
+    data() {
+      return {
+        Icon
+      };
+    },
+    methods: {
+      goBack() {
+        if (this.data.backUrl) {
+          location.href = this.data.backUrl;
+        } else {
+          history.back();
+        }
+      }
+    }
   };
 </script>
 <style type="text/scss" lang="scss">
-  .header {
+  .eleme-header {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -23,19 +47,15 @@
     span {
       flex: 1;
     }
-  }
-  .goback {
-    padding: 0 30px;
-    position: relative;
-    &::before {
-      content: '';
-      width: 20px;
-      height: 20px;
-      border: 4px solid #fff;
-      border-top-color: transparent;
-      border-right-color: transparent;
-      display: inline-block;
-      transform: rotate(45deg);
+    a {
+      padding: 0 30px;
+      width: 30px;
+    }
+    svg {
+      fill: #fff;
+      width: 30px;
+      height: 33px;
+      vertical-align: middle;
     }
   }
 </style>

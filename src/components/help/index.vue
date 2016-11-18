@@ -8,6 +8,7 @@
 </template>
 <script>
   import ElemeHeader from '../header';
+  import Icon from 'src/common/icon';
   export default {
     components: {
       'eleme-header': ElemeHeader
@@ -16,8 +17,9 @@
       return {
         headerData: {
           title: '帮助',
-          href: '/appeal'
-        }
+          backUrl: '/appeal'
+        },
+        Icon
       };
     },
     mounted() {

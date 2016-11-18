@@ -13,7 +13,7 @@
       return {
         headerData: {
           title: '申诉',
-          href: '/help'
+          backUrl: '/help'
         }
       };
     },

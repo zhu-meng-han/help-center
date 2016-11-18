@@ -41,6 +41,21 @@ cooking.set({
   },
   extends: ['vue2', 'lint', 'sass']
 });
+cooking.add('loaders.svg', [
+  {
+    test: /\.svg$/,
+    exclude: [/not-sprite-svg/],
+    loaders: ['svg-sprite-loader']
+  }, {
+    test: /\.svg$/,
+    include: [/not-sprite-svg/],
+    loaders: ['url-loader']
+  }
+]);
+cooking.add('preLoaders.svg', {
+  test: /\.svg$/,
+  loaders: ['svgo-loader?' + JSON.stringify(require('./src/common/util/svgo-config'))]
+});
 
 cooking.add('resolve.root', [
   path.join(__dirname, 'src/assets/')
