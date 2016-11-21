@@ -1,5 +1,5 @@
 <template>
-  <header class="eleme-header">
+  <header class="header">
     <template>
       <slot name="left">
         <a class="" href="javascript:;" @click="goBack">
@@ -8,7 +8,7 @@
       </slot>
       <span v-text="data.title"></span>
       <slot name="right">
-        <a class="eleme-right" href="javascript"></a>
+        <a href="javascript"></a>
       </slot>
     </template>
   </header>
@@ -34,7 +34,7 @@
   };
 </script>
 <style type="text/scss" lang="scss">
-  .eleme-header {
+  .header {
     position: relative;
     display: flex;
     justify-content: space-between;

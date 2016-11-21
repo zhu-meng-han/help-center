@@ -74,6 +74,32 @@ input[type="reset"] {
   appearance: button;  /* iOS下的样式问题 */
 }
 
-.loading {
+.icon-arrow-right {
+  position: relative;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border: 4px solid #ddd;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
 
+.btn-default {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  border: 0;
+  color: #333;
+  width: 100%;
+  padding: 28px;
+  border-radius: 10px;
+  &[disabled] {
+    color: #999;
+  }
+}
+.btn-primary {
+  color: #fff;
+  background-color: #4cd964;
 }

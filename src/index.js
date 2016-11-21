@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueFilter from 'vue-filter';
-
 import routes from './router.js';
+import Toast from 'src/components/toast';
 import './index.scss';
 
 Vue.use(VueRouter);
@@ -15,5 +15,12 @@ const router = new VueRouter({
 
 new Vue({
   router,
-  render: h => h('router-view')
+  render(h) {
+    return h('main', [h('router-view'), h(Toast, { ref: 'toast'})]);
+  },
+  methods: {
+    Toast(headerText, contentText, cancelText, isCall) {
+      this.$refs.toast.show(headerText, contentText, cancelText, isCall);
+    }
+  }
 }).$mount(document.querySelector('app'));
