@@ -1,7 +1,7 @@
 <template>
   <section>
     <el-header :data="headerData"></el-header>
-    <router-link to="/order-complaint" tag="ul" class="help-content">
+    <router-link to="/complaint" tag="ul" class="help-content">
       <li>
         <svg><use :xlink:href="Icon.Complaints"></use></svg>
       </li>
@@ -48,7 +48,7 @@
       return {
         headerData: {
           title: '帮助中心',
-          backUrl: '/appeal'
+          backUrl: '/complaint'
         },
         Icon
       };

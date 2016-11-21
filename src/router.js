@@ -1,10 +1,10 @@
 export default [
   {
-    path: '/order-complaint',
-    component: require('./components/order-complaint/index.vue')
+    path: '/complaint',
+    component: require('./components/complaint')
   },
   {
     path: '/help',
-    component: require('./components/help/index.vue')
+    component: require('./components/help')
   }
 ];

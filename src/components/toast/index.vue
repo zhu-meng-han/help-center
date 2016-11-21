@@ -2,11 +2,11 @@
   <transition name="fade-in">
     <section class="el-toast" v-if="isShow">
       <div class="mask" @click="cancel"></div>
-      <div class="eleme-toast_warp">
-        <div class="eleme-toast_header" v-html="headerText">
+      <div class="el-toast_warp">
+        <div class="el-toast_header" v-html="headerText">
         </div>
-        <div class="eleme-toast_content" v-html="contentText"></div>
-        <footer class="eleme-toast_footer">
+        <div class="el-toast_content" v-html="contentText"></div>
+        <footer class="el-toast_footer">
           <a @click="cancel" v-text="cancelText"></a>
           <a href="tel:10105757" v-if="isCall">呼叫</a>
         </footer>

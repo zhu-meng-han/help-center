@@ -11,7 +11,7 @@
         <textarea v-if="complaintOption === 8" v-model="otherComplaint" placeholder="输入您要投诉的内容"></textarea>
       </div>
     </div>
-    <mark>如遇到紧急事项，请联系客服：<a href="tel:101057575"><svg><use :xlink:href="Icon.Tel"></use></svg>101057575</a></mark>
+    <mark>如遇到紧急事项，请联系客服：<a href="tel:10105757"><svg><use :xlink:href="Icon.Tel"></use></svg>101057575</a></mark>
     <div class="footer">
       <button @click="submit" :disabled="btnDisabled" class="btn-default " :class="{'btn-primary': !btnDisabled}">提交</button>
     </div>
@@ -90,7 +90,6 @@
     },
     methods: {
       submit() {
-        // this.$root.showDefaultToast();
         console.log(`complaintOption: ${this.complaintOption}， otherComplaint: ${this.otherComplaint}`);
         this.$root.Toast('订单投诉成功', '给您带来的不便真的抱歉，我们非常重视您的投诉，会以最快的速度核实并处理。', '知道了', false);
       }
